@@ -1,0 +1,4 @@
+.footer__position {
+  margin: 0 auto 36px;
+  width: calc(100% - 5.9375% * 2);;
+}

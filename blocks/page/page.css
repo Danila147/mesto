@@ -1,0 +1,9 @@
+.page {
+  font-weight: 400;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}

@@ -1,0 +1,11 @@
+.place__like {
+all: unset;
+
+  background-image: url('../../../images/elements-like.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+  width: 22px;
+  height: 19px;
+}

@@ -1,0 +1,4 @@
+.content {
+  margin: 0 auto;
+  width: calc(100% - 5.9375% * 2);
+}
