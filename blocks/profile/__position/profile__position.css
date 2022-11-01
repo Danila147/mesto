@@ -1,3 +1,9 @@
 .profile__position {
   margin: 0 auto 36px;
 }
+
+@media(min-width: 1280px) {
+  .profile__position {
+    margin-bottom: 51px;
+  }
+}

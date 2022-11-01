@@ -11,3 +11,22 @@
   width: 100%;
   min-height: 50px;
 }
+
+.profile__add:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+@media(min-width: 425px) {
+  .profile__add {
+    width: 282px;
+  }
+}
+
+@media(min-width: 768px) {
+  .profile__add {
+    width: 150px;
+    height: 50px;
+    margin-left: auto;
+  }
+}

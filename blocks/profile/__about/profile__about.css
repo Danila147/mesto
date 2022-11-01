@@ -6,3 +6,16 @@
   line-height: 1.2;
   text-align: center;
 }
+
+@media(min-width: 768px) {
+  .profile__about {
+    text-align: start;
+    padding: 0;
+  }
+}
+
+@media(min-width: 1280px) {
+  .profile__about {
+    font-size: 18px;
+  }
+}

@@ -1,3 +1,11 @@
 .elements__position {
   margin: 0 auto 48px;
 }
+
+@media(min-width: 1280px) {
+  .elements__position {
+    margin-bottom: 67px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}

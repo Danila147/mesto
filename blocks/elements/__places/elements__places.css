@@ -9,3 +9,12 @@
   align-items: center;
   gap: 20px;
 }
+
+@media(min-width: 768px) {
+  .elements__places {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(361px, 1fr));
+    gap: 17px;
+  }
+}

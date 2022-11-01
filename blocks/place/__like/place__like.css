@@ -9,3 +9,8 @@ all: unset;
   width: 22px;
   height: 19px;
 }
+
+.place__like:hover {
+  opacity: .6;
+  cursor: pointer;
+}
