@@ -1,0 +1,13 @@
+.popup__info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  margin-bottom: 45px;
+}
+
+@media(min-width: 768px) {
+  .popup__container {
+    margin-bottom: 48px;
+  }
+}
