@@ -1,4 +1,6 @@
 .popup__info-container {
+  all: unset;
+
   display: flex;
   flex-direction: column;
   gap: 17px;
