@@ -22,17 +22,20 @@ let aboutProfile = document.querySelector('.profile__about');
 function saveInfo(evt) {
   evt.preventDefault();
 
-  let nameInfo = document.querySelector('.popup__name');
+  let nameInfo = document.querySelector('.popup__info_data_name');
 
-  let aboutInfo = document.querySelector('.popup__about');
+  let aboutInfo = document.querySelector('.popup__info_data_about');
 
   nameProfile.textContent = nameInfo.value;
 
   aboutProfile.textContent = aboutInfo.value;
+
+  popupElem.classList.remove('popup__opened');
 }
 
 let saveElem = document.querySelector('.popup__save');
 
 saveElem.addEventListener('click', saveInfo);
 
+saveElem.addEventListener('submit', saveInfo);
 

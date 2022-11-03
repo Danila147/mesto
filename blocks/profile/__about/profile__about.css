@@ -2,9 +2,15 @@
   margin: 0;
   padding-bottom: 36px;
 
+  max-width: 85%;
+
   font-size: 14px;
   line-height: 1.2;
   text-align: center;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media(min-width: 768px) {
