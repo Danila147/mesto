@@ -1,8 +1,6 @@
 .profile__edit {
   all: unset;
 
-  margin-top: 8px;
-
   background-image: url('../../../images/profile-editButton.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -19,6 +17,8 @@
 
 @media(min-width: 1280px) {
   .profile__edit {
+    margin-top: 8px;
+
     width: 24px;
     height: 24px;
   }
