@@ -11,9 +11,9 @@ let formElem = document.querySelector('.popup__container')
 function openPopup() {
   popupElem.classList.add('popup__opened');
 
-  nameInfo.value.textContent = nameProfile;
+  nameInfo.value = nameProfile.textContent;
 
-  aboutInfo.value.textContent = aboutProfile;
+  aboutInfo.value = aboutProfile.textContent;
 }
 
 editElem.addEventListener('click', openPopup);
