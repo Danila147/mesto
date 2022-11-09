@@ -16,13 +16,9 @@ function openPopup() {
   aboutInfo.value = aboutProfile.textContent;
 }
 
-editElem.addEventListener('click', openPopup);
-
 function closePopup() {
   popupElem.classList.remove('popup__opened');
 }
-
-closeElem.addEventListener('click', closePopup);
 
 function saveInfo(evt) {
   evt.preventDefault();
@@ -34,5 +30,7 @@ function saveInfo(evt) {
   closePopup();
 }
 
+editElem.addEventListener('click', openPopup);
+closeElem.addEventListener('click', closePopup);
 formElem.addEventListener('submit', saveInfo);
 
