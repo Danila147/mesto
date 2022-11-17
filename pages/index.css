@@ -50,3 +50,8 @@
 @import url('../blocks/popup/__opened/popup__opened.css');
 @import url('../blocks/popup/__info/_data/popup__info_data_name.css');
 @import url('../blocks/popup/__info/_data/popup__info_data_about.css');
+@import url('../blocks/popup/__info/_data/popup__info_data_place.css');
+@import url('../blocks/popup/__info/_data/popup__info_data_image.css');
+@import url('../blocks/popup/_profile-edit/popup_profile-edit.css');
+@import url('../blocks/popup/_card-add/popup_card-add.css');
+@import url('../blocks/popup/__close/_card-add/popup__close_card-add.css');

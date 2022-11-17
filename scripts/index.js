@@ -25,7 +25,7 @@ const cardList = [
   }
 ];
 
-const popupElem = document.querySelector('.popup');
+const profileElem = document.querySelector('.popup_profile-edit');
 const editElem = document.querySelector('.profile__edit');
 const closeElem = document.querySelector('.popup__close');
 const nameProfile = document.querySelector('.profile__name');
@@ -35,17 +35,29 @@ const aboutInfo = document.querySelector('.popup__info_data_about');
 const saveElem = document.querySelector('.popup__save');
 const formElem = document.querySelector('.popup__container');
 const placesContainer = document.querySelector('.elements__places');
+const addElem = document.querySelector('.profile__add');
+const cardElem = document.querySelector('.popup_card-add');
+const closeAddElem = document.querySelector('.popup__close_card-add');
 
-function openPopup() {
-  popupElem.classList.add('popup__opened');
+
+function openPopupEdit() {
+  profileElem.classList.add('popup__opened');
 
   nameInfo.value = nameProfile.textContent;
 
   aboutInfo.value = aboutProfile.textContent;
 }
 
-function closePopup() {
-  popupElem.classList.remove('popup__opened');
+function openPopupAdd() {
+  cardElem.classList.add('popup__opened');
+}
+
+function closePopupEdit() {
+  profileElem.classList.remove('popup__opened');
+}
+
+function closePopupAdd() {
+  cardElem.classList.remove('popup__opened');
 }
 
 function saveInfo(evt) {
@@ -55,7 +67,7 @@ function saveInfo(evt) {
 
   aboutProfile.textContent = aboutInfo.value;
 
-  closePopup();
+  closePopupEdit();
 }
 
 function renderCard(placeCard) {
@@ -80,7 +92,10 @@ cardList.forEach(function (placeCard) {
   renderCard(placeCard);
 });
 
-editElem.addEventListener('click', openPopup);
-closeElem.addEventListener('click', closePopup);
+editElem.addEventListener('click', openPopupEdit);
+closeElem.addEventListener('click', closePopupEdit);
 formElem.addEventListener('submit', saveInfo);
+addElem.addEventListener('click', openPopupAdd);
+closeAddElem.addEventListener('click', closePopupAdd);
+
 
