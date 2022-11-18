@@ -41,7 +41,7 @@ const closeAddElem = document.querySelector('.popup__close_card-add');
 const placeInfo = document.querySelector('.popup__info_data_place');
 const imageLink = document.querySelector('.popup__info_data_image');
 const addForm = document.querySelector('.popup__container_card-add');
-
+const cardTemplate = document.querySelector('#card-template').content.querySelector('.card');
 
 function openPopupEdit() {
   profileElem.classList.add('popup__opened');
@@ -86,22 +86,20 @@ function addCard(evt) {
   closePopupAdd();
 }
 
+function createCard(placeCard) {
+  const newCard = cardTemplate.cloneNode(true);
+
+  const cardTitle = newCard.querySelector('.place__title');
+  cardTitle.textContent = placeCard.name;
+
+  const cardImage = newCard.querySelector('.place__image');
+  cardImage.setAttribute('src', `${placeCard.link}`);
+
+  return newCard;
+}
+
 function renderCard(placeCard) {
-  placesContainer.insertAdjacentHTML("afterbegin",
-    `
-  <li>
-    <article class="place">
-      <img src="${placeCard.link}" alt="${placeCard.name}" class="place__image">
-      <div class="place__container">
-        <h2 class="place__title">
-          ${placeCard.name}
-        </h2>
-        <button type="button" class="place__like">
-        </button>
-      </div>
-    </article>
-  </li>
-  `)
+  placesContainer.prepend(createCard(placeCard));
 }
 
 cardList.forEach(function (placeCard) {
