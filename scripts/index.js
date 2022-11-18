@@ -38,6 +38,9 @@ const placesContainer = document.querySelector('.elements__places');
 const addElem = document.querySelector('.profile__add');
 const cardElem = document.querySelector('.popup_card-add');
 const closeAddElem = document.querySelector('.popup__close_card-add');
+const placeInfo = document.querySelector('.popup__info_data_place');
+const imageLink = document.querySelector('.popup__info_data_image');
+const addForm = document.querySelector('.popup__container_card-add');
 
 
 function openPopupEdit() {
@@ -70,6 +73,19 @@ function saveInfo(evt) {
   closePopupEdit();
 }
 
+function addCard(evt) {
+  evt.preventDefault();
+
+  renderCard(
+    { link: imageLink.value, name: placeInfo.value }
+  );
+
+  imageLink.value = '';
+  placeInfo.value = '';
+
+  closePopupAdd();
+}
+
 function renderCard(placeCard) {
   placesContainer.insertAdjacentHTML("afterbegin",
     `
@@ -97,5 +113,6 @@ closeElem.addEventListener('click', closePopupEdit);
 formElem.addEventListener('submit', saveInfo);
 addElem.addEventListener('click', openPopupAdd);
 closeAddElem.addEventListener('click', closePopupAdd);
+addForm.addEventListener('submit', addCard);
 
 
