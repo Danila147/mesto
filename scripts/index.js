@@ -63,7 +63,7 @@ function closePopupAdd() {
   cardElem.classList.remove('popup__opened');
 }
 
-function saveInfo(evt) {
+function handleSaveInfo(evt) {
   evt.preventDefault();
 
   nameProfile.textContent = nameInfo.value;
@@ -71,6 +71,14 @@ function saveInfo(evt) {
   aboutProfile.textContent = aboutInfo.value;
 
   closePopupEdit();
+}
+
+function handleDeleteCard(evt) {
+  evt.target.closest('.card').remove();
+}
+
+function handleLikeCard(evt) {
+  evt.target.closest('.place__like').classList.toggle('place__like_active');
 }
 
 function addCard(evt) {
@@ -95,6 +103,14 @@ function createCard(placeCard) {
   const cardImage = newCard.querySelector('.place__image');
   cardImage.setAttribute('src', `${placeCard.link}`);
 
+  cardImage.setAttribute('alt', `${placeCard.name}`);
+
+  const deleteBtn = newCard.querySelector('.place__delete');
+  deleteBtn.addEventListener('click', handleDeleteCard);
+
+  const likeBtn = newCard.querySelector('.place__like');
+  likeBtn.addEventListener('click', handleLikeCard);
+
   return newCard;
 }
 
@@ -108,7 +124,7 @@ cardList.forEach(function (placeCard) {
 
 editElem.addEventListener('click', openPopupEdit);
 closeElem.addEventListener('click', closePopupEdit);
-formElem.addEventListener('submit', saveInfo);
+formElem.addEventListener('submit', handleSaveInfo);
 addElem.addEventListener('click', openPopupAdd);
 closeAddElem.addEventListener('click', closePopupAdd);
 addForm.addEventListener('submit', addCard);
