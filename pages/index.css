@@ -63,6 +63,6 @@
 @import url('../blocks/popup/__image/popup__image.css');
 @import url('../blocks/popup/__background/popup__background.css');
 @import url('../blocks/popup/__caption/popup__caption.css');
-@import url('../blocks/popup/_open-image/popup_open-image.css');
+@import url('../blocks/popup/_opened-image/popup_opened-image.css');
 
 @import url('../blocks/card/card.css');
