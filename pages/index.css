@@ -64,5 +64,7 @@
 @import url('../blocks/popup/_background/popup_background.css');
 @import url('../blocks/popup/__caption/popup__caption.css');
 @import url('../blocks/popup/_opened-image/popup_opened-image.css');
+@import url('../blocks/popup/__close/_profile-edit/popup__close_profile-edit.css');
+@import url('../blocks/popup/__container/_profile-edit/popup__container_profile-edit.css');
 
 @import url('../blocks/card/card.css');
