@@ -78,25 +78,25 @@ function handleAddCard(evt) {
 }
 
 function generateCard(cardData) {
-  const Card = cardTemplate.cloneNode(true);
+  const card = cardTemplate.cloneNode(true);
 
-  const cardTitle = Card.querySelector('.place__title');
+  const cardTitle = card.querySelector('.place__title');
   cardTitle.textContent = cardData.name;
 
-  const cardImage = Card.querySelector('.place__image');
+  const cardImage = card.querySelector('.place__image');
 
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
 
-  const deleteButton = Card.querySelector('.place__delete');
-  deleteButton.addEventListener("click", () => handleDeleteCard(Card));
+  const deleteButton = card.querySelector('.place__delete');
+  deleteButton.addEventListener("click", () => handleDeleteCard(card));
 
-  const likeButton = Card.querySelector('.place__like');
+  const likeButton = card.querySelector('.place__like');
   likeButton.addEventListener('click', () => handleLikeCard(likeButton));
 
   cardImage.addEventListener('click', () => openPopupImage(cardData));
 
-  return Card;
+  return card;
 }
 
 function renderCard(cardData) {
