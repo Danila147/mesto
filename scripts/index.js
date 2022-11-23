@@ -5,7 +5,7 @@ const nameProfile = document.querySelector('.profile__name');
 const aboutProfile = document.querySelector('.profile__about');
 const nameInput = document.querySelector('.popup__info_data_name');
 const aboutInfo = document.querySelector('.popup__info_data_about');
-const editForm = document.querySelector('.popup__container_profile-edit');
+const profileForm = document.querySelector('.popup__container_profile-edit');
 const placesContainer = document.querySelector('.elements__places');
 const buttonOpenCardPopup = document.querySelector('.profile__add');
 const cardPopup = document.querySelector('.popup_card-add');
@@ -57,8 +57,7 @@ function handleProfileFormSubmit(evt) {
   closePopup(profileElem);
 }
 
-function handleDeleteCard() {
-  const card = document.querySelector('.card');
+function handleDeleteCard(card) {
   card.remove();
 }
 
@@ -79,25 +78,25 @@ function handleAddCard(evt) {
 }
 
 function generateCard(cardData) {
-  const newCard = cardTemplate.cloneNode(true);
+  const Card = cardTemplate.cloneNode(true);
 
-  const cardTitle = newCard.querySelector('.place__title');
+  const cardTitle = Card.querySelector('.place__title');
   cardTitle.textContent = cardData.name;
 
-  const cardImage = newCard.querySelector('.place__image');
+  const cardImage = Card.querySelector('.place__image');
 
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
 
-  const deleteButton = newCard.querySelector('.place__delete');
-  deleteButton.addEventListener('click', handleDeleteCard);
+  const deleteButton = Card.querySelector('.place__delete');
+  deleteButton.addEventListener("click", () => handleDeleteCard(Card));
 
-  const likeButton = newCard.querySelector('.place__like');
+  const likeButton = Card.querySelector('.place__like');
   likeButton.addEventListener('click', () => handleLikeCard(likeButton));
 
   cardImage.addEventListener('click', () => openPopupImage(cardData));
 
-  return newCard;
+  return Card;
 }
 
 function renderCard(cardData) {
@@ -110,7 +109,7 @@ cardList.forEach(function (cardData) {
 
 buttonOpenProfilePopup.addEventListener('click', openPopupEdit);
 buttonCloseProfilePopup.addEventListener('click', () => closePopup(profileElem));
-editForm.addEventListener('submit', handleProfileFormSubmit);
+profileForm.addEventListener('submit', handleProfileFormSubmit);
 buttonOpenCardPopup.addEventListener('click', () => openPopup(cardPopup));
 buttonCloseCardPopup.addEventListener('click', () => closePopup(cardPopup));
 cardForm.addEventListener('submit', handleAddCard);
