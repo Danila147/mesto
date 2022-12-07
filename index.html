@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mesto</title>
   <link rel="stylesheet" href="./pages/index.css">
+  <script src="./scripts/cards.js" defer></script>
+  <script src="./scripts/index.js" defer></script>
+  <script src="./scripts/validate.js" defer></script>
 </head>
 
 <body class="root">
@@ -36,16 +39,19 @@
         &copy; 2020 Mesto Russia
       </p>
     </footer>
+
     <div class="popup popup_profile-edit">
-      <form name="popupForm" class="popup__container popup__container_profile-edit">
+      <form name="popupForm" class="popup__container popup__container_profile-edit" novalidate>
         <button type="button" class="popup__close popup__close_profile-edit"></button>
         <h2 class="popup__title">
           Редактировать профиль
         </h2>
         <fieldset class="popup__info-container">
-          <input name="userName" type="text" placeholder="Жак-Ив Кусто" class="popup__info popup__info_data_name">
-          <input name="userAbout" type="text" placeholder="Исследователь океана"
-            class="popup__info popup__info_data_about">
+          <input id="userName-input" name="userName" type="text" placeholder="Жак-Ив Кусто" class="popup__info popup__info_data_name" minlength="2" maxlength="40" required>
+          <span class="popup__info-error userName-input-error"></span>
+          <input id="userAbout-input" name="userAbout" type="text" placeholder="Исследователь океана"
+            class="popup__info popup__info_data_about" minlength="2" maxlength="200" required>
+            <span class="popup__info-error userAbout-input-error"></span>
         </fieldset>
         <button type="submit" class="popup__save">
           Сохранить
@@ -53,15 +59,18 @@
       </form>
     </div>
   </div>
+
   <div class="popup popup_card-add">
-    <form name="popupForm" class="popup__container popup__container_card-add">
+    <form name="popupForm" class="popup__container popup__container_card-add" novalidate>
       <button type="button" class="popup__close popup__close_card-add"></button>
       <h2 class="popup__title">
         Новое место
       </h2>
       <fieldset class="popup__info-container">
-        <input name="userName" type="text" placeholder="Название" class="popup__info popup__info_data_place">
-        <input name="userAbout" type="text" placeholder="Ссылка на картинку" class="popup__info popup__info_data_image">
+        <input id="placeName-input" name="placeName" type="text" placeholder="Название" class="popup__info popup__info_data_place" minlength="2" maxlength="30" required>
+        <span class="popup__info-error placeName-input-error"></span>
+        <input id="placeLink-input" name="placeLink" type="url" placeholder="Ссылка на картинку" class="popup__info popup__info_data_image" required>
+        <span class="popup__info-error placeLink-input-error"></span>
       </fieldset>
       <button type="submit" class="popup__save">
         Создать
@@ -78,9 +87,6 @@
       </figure>
     </div>
   </div>
-
-  <script src="./scripts/cards.js" defer></script>
-  <script src="./scripts/index.js" defer></script>
 
   <template id="card-template">
     <li class="card">
