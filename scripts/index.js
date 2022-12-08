@@ -1,3 +1,4 @@
+const popupElem = document.querySelectorAll('.popup');
 const profileElem = document.querySelector('.popup_profile-edit');
 const buttonOpenProfilePopup = document.querySelector('.profile__edit');
 const buttonCloseProfilePopup = document.querySelector('.popup__close_profile-edit');
@@ -21,6 +22,10 @@ const buttonCloseImagePopup = document.querySelector('.popup__close_image');
 
 function openPopup(popup) {
   popup.classList.add('popup__opened');
+
+  resetError(popup);
+
+  document.addEventListener('keydown', handleEscClose);
 }
 
 function openPopupEdit() {
@@ -30,6 +35,12 @@ function openPopupEdit() {
   aboutInfo.value = aboutProfile.textContent;
 
   openPopup(profileElem);
+}
+
+function openPopupPlace() {
+  disableButton(cardPopup.querySelector('.popup__save'), validationConfig.inactiveButtonClass);
+
+  openPopup(cardPopup);
 }
 
 function openPopupImage(cardData) {
@@ -45,6 +56,21 @@ function openPopupImage(cardData) {
 
 function closePopup(popup) {
   popup.classList.remove('popup__opened');
+
+  document.removeEventListener('keydown', handleEscClose);
+}
+
+function closePopupOnOverlay(evt) {
+  if(evt.target === evt.currentTarget) {
+    this.classList.remove('popup__opened');
+  }
+}
+
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const popupEscClose = document.querySelector('.popup__opened');
+    closePopup(popupEscClose);
+  }
 }
 
 function handleProfileFormSubmit(evt) {
@@ -110,8 +136,11 @@ cardList.forEach(function (cardData) {
 buttonOpenProfilePopup.addEventListener('click', openPopupEdit);
 buttonCloseProfilePopup.addEventListener('click', () => closePopup(profileElem));
 profileForm.addEventListener('submit', handleProfileFormSubmit);
-buttonOpenCardPopup.addEventListener('click', () => openPopup(cardPopup));
+buttonOpenCardPopup.addEventListener('click', openPopupPlace);
 buttonCloseCardPopup.addEventListener('click', () => closePopup(cardPopup));
 cardForm.addEventListener('submit', handleAddCard);
 buttonCloseImagePopup.addEventListener('click', () => closePopup(openedPopupImage));
+profileElem.addEventListener('click', closePopupOnOverlay);
+cardPopup.addEventListener('click', closePopupOnOverlay);
+openedPopupImage.addEventListener('click', closePopupOnOverlay);
 
