@@ -1,6 +1,8 @@
 .popup__info {
   all: unset;
 
+  width: 100%;
+
   padding: 13px 0;
 
   font-size: 14px;
