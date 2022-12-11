@@ -5,21 +5,19 @@
 
   padding: 25px 22px;
 
-  max-width: 282px;
-  width: 100%;
+  /* max-width: 330px; */
+  width: 430px;
   box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
 
   position: relative;
-
-
 }
 
 @media(min-width: 768px) {
   .popup__container {
-    max-width: 430px;
+    min-height: 330px;
     padding: 36px;
   }
 }
