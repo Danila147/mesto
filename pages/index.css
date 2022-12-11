@@ -71,7 +71,7 @@
 @import url('../blocks/popup/__span/popup__span.css');
 
 @import url('../blocks/form/form.css');
-@import url('../blocks/form/__card-add/form__card-add.css');
-@import url('../blocks/form/__profile-edit/form__profile-edit.css');
+@import url('../blocks/form/_card-add/form_card-add.css');
+@import url('../blocks/form/_profile-edit/form_profile-edit.css');
 
 @import url('../blocks/card/card.css');
