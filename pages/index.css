@@ -56,14 +56,12 @@
 @import url('../blocks/popup/__info/_data/popup__info_data_image.css');
 @import url('../blocks/popup/_profile-edit/popup_profile-edit.css');
 @import url('../blocks/popup/_card-add/popup_card-add.css');
-@import url('../blocks/popup/__close/_card-add/popup__close_card-add.css');
 @import url('../blocks/popup/__image-container/popup__image-container.css');
 @import url('../blocks/popup/__figure/popup__figure.css');
 @import url('../blocks/popup/__image/popup__image.css');
 @import url('../blocks/popup/_background/popup_background.css');
 @import url('../blocks/popup/__caption/popup__caption.css');
 @import url('../blocks/popup/_opened-image/popup_opened-image.css');
-@import url('../blocks/popup/__close/_profile-edit/popup__close_profile-edit.css');
 @import url('../blocks/popup/__info/_type/popup__info_type_error.css');
 @import url('../blocks/popup/__info-error/popup__info-error.css');
 @import url('../blocks/popup/__info-error/_active/popup__info-error_active.css');

@@ -10,19 +10,19 @@ const validationConfig  = {
 const showInputError = (formSelector, inputElement, errorMessage, validationConfig) => {
   const errorElement = formSelector.querySelector(`.${inputElement.id}-error`);
 
-  inputElement.classList.add(validationConfig .inputErrorClass);
+  inputElement.classList.add(validationConfig.inputErrorClass);
 
   errorElement.textContent = errorMessage;
 
-  errorElement.classList.add(validationConfig .errorClass);
+  errorElement.classList.add(validationConfig.errorClass);
 };
 
 const hideInputError = (formSelector, inputElement, validationConfig) => {
   const errorElement = formSelector.querySelector(`.${inputElement.id}-error`);
 
-  inputElement.classList.remove(validationConfig .inputErrorClass);
+  inputElement.classList.remove(validationConfig.inputErrorClass);
 
-  errorElement.classList.remove(validationConfig .errorClass);
+  errorElement.classList.remove(validationConfig.errorClass);
 
   errorElement.textContent = '';
 };
@@ -36,9 +36,9 @@ const isValid = (formSelector, inputElement, validationConfig) => {
 };
 
 const setEventListeners = (formSelector, validationConfig) => {
-  const inputList = Array.from(formSelector.querySelectorAll(validationConfig .inputSelector));
+  const inputList = Array.from(formSelector.querySelectorAll(validationConfig.inputSelector));
 
-  const buttonElement = formSelector.querySelector(validationConfig .submitButtonSelector);
+  const buttonElement = formSelector.querySelector(validationConfig.submitButtonSelector);
 
   toggleButtonState(inputList, buttonElement);
 
@@ -51,7 +51,7 @@ const setEventListeners = (formSelector, validationConfig) => {
 };
 
 function enableValidation (validationConfig) {
-  const formList = Array.from(document.querySelectorAll(validationConfig .formSelector));
+  const formList = Array.from(document.querySelectorAll(validationConfig.formSelector));
 
   formList.forEach((formSelector) => {
 
@@ -67,10 +67,9 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(validationConfig .inactiveButtonClass);
-    buttonElement.disabled = true;
+    disableButton(buttonElement, validationConfig.inactiveButtonClass);
   } else {
-    buttonElement.classList.remove(validationConfig .inactiveButtonClass);
+    buttonElement.classList.remove(validationConfig.inactiveButtonClass);
     buttonElement.disabled = false;
   }
 };
